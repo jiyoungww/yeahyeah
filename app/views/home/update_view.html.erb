@@ -1,0 +1,15 @@
+<head>
+  <link href="/home.css" type="text/css" rel="stylesheet" />
+</head>
+
+<div class="main">
+  <div class="container">
+    <h1>TRIP FOR US</h1>
+    <form action = "/home/update/<%= @one_post.id %>" method ="POST">
+      
+      <input class="form-control form-control-sm" name="irum" type="text" placeholder="제목" value="<%=@one_post.writer%>"><br>
+      <input class="form-control form-control-lg" name="naeyong" type="text" placeholder="내용을 입력하세요" value ="<%= @one_post.content %>">
+      <input type ="submit">
+    </form> 
+  </div>
+</div>

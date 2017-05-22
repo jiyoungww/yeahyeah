@@ -1,0 +1,15 @@
+<head>
+  <link href="/home.css" type="text/css" rel="stylesheet" />
+</head>
+
+<div class="main">
+  <div class="container">
+    <h1>Reply Edit</h1>
+        <form action="/reply_update/<%= @reply.id %>" method="POST">
+            <div class="form-group">
+               <textarea name="content" class="form-control" rows="7" cols="10"><%= @reply.content %></textarea>
+            </div>
+            <input type ="submit">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<head>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'>
+  <link href="/home.css" type="text/css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("h4").mouseleave(function(){
+            alert("댓글 좀 달아주세요(찡긋)");
+        });
+    });
+        $(document).ready(function(){
+        $("p").on({
+            mouseenter: function(){
+                $(this).css("background-color", "lightgray");
+            },  
+            mouseleave: function(){
+                $(this).css("background-color", "lightblue");
+            }, 
+            click: function(){
+                $(this).css("background-color", "yellow");
+            }  
+        });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <h4><a href="/home/write" style="color:white; font-size:15px; background-color:blue; text-decoration: none;" type="button">여행지 추천하기</a></h4>
+      <h1 style="font-family:verdana; font-weight:bold;">Trip for us</h1>
+      <!--글 출력-->
+        <div class = "bonmun">
+          <% @posts.each do |p| %>
+          <%= p.writer %> : 
+          <pre><%=p.content%></pre>
+        </div>
+          <q><%=p.updated_at %></q>
+          <a href="/destroy/<%= p.id %>">[삭제]</a>
+          <a href="/update_view/<%= p.id %>">[수정]</a><hr>
+        
+        
+        <!---------------댓글 입력창---------->
+          <% p.replies.each do |r| %>
+          <p><%= r.content %></p>
+          <q><%=r.updated_at %></q>
+          <a href="/rpdestroy/<%= r.id %>">[삭제]</a>
+          <a href="/rpupdate_view/<%= r.id %>">[수정]</a><hr>
+          <% end %>
+          <form action="/reply_write" method="POST">
+            <input type="hidden" name="id_of_post" value="<%= p.id %>">
+            <div class="form-group" >
+               <textarea name="content" class="form-control" placeholder="댓글을 입력하세요"></textarea>
+               
+            </div>
+            <input type ="submit" value="댓글입력">
+          </form>
+        <br>
+      <% end %> <!---------  <%# @posts.each do |p| %> 에 대한 end   ========-->
+      
+    </div>
+  </div>
+
+   
+      

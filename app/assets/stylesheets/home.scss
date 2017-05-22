@@ -1,0 +1,55 @@
+
+.main {
+  text-align: center;
+  background: url("http://wdss.co.kr/shop/data/goods/upload/7/5414/list_1200.jpg") center center;
+  background-size: cover;
+  height: 600px;
+}
+
+h1, h2, {
+  margin-top: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a {
+    color: red; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+
+p {
+  font-family: Helvetica, Arial, sans-serif; 
+  font-size: 15px;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+
+form {
+    /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 300px;
+    
+}
+.bonmun {
+  font-size: 20px;
+  font-family: "Nanum Gothic","맑은 고딕","Malgun Gothic","돋움",dotum,sans-serif;
+  font-weight: bold;
+
+}
+
+q {
+  font-size: 8px;
+}
+
+
+
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
